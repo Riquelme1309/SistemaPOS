@@ -82,16 +82,16 @@ namespace Proyecto1
 
         private void CargarTablaVentas()
         {
-            dgvVentas.Rows.Clear();
-            dgvVentas.Columns.Clear();
-            dgvVentas.Columns.Add("Numero", "N° Factura");
-            dgvVentas.Columns.Add("NIT", "NIT");
-            dgvVentas.Columns.Add("Fecha", "Fecha");
-            dgvVentas.Columns.Add("Estado", "Estado");
-            dgvVentas.Columns.Add("Total", "Total");
+            dgvVenta.Rows.Clear();
+            dgvVenta.Columns.Clear();
+            dgvVenta.Columns.Add("Numero", "N° Factura");
+            dgvVenta.Columns.Add("NIT", "NIT");
+            dgvVenta.Columns.Add("Fecha", "Fecha");
+            dgvVenta.Columns.Add("Estado", "Estado");
+            dgvVenta.Columns.Add("Total", "Total");
 
             foreach (var f in listaFacturas)
-                dgvVentas.Rows.Add(
+                dgvVenta.Rows.Add(
                     f.NumeroFactura,
                     f.NIT,
                     f.Fecha.ToString("dd/MM/yyyy HH:mm"),
@@ -118,7 +118,7 @@ namespace Proyecto1
         private void LimpiarVenta()
         {
             txtNIT.Text = "";
-            txtNombreCliente.Text = "";
+            txtNombreCliente1.Text = "";
             txtCodigoProducto.Text = "";
             txtCantidadVenta.Text = "1";
             clienteActual = null;
@@ -270,46 +270,20 @@ namespace Proyecto1
             }
         }
 
-        // ════════════════════════════════════════
-        //  TAB CLIENTES — BOTONES
-        // ════════════════════════════════════════
-        private void btnGuardarCliente_Click(object sender, EventArgs e)
-        {
-            if (!ValidarCliente()) return;
-
-            foreach (var c in listaClientes)
-            {
-                if (c.NIT == txtNITCliente.Text.Trim())
-                {
-                    MessageBox.Show("Ya existe un cliente con ese NIT.",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
-            listaClientes.AddLast(new Cliente(
-                txtNITCliente.Text.Trim(),
-                txtNombreCliente2.Text.Trim(),
-                txtApellidoCliente.Text.Trim(),
-                txtDireccionCliente.Text.Trim(),
-                txtTelefonoCliente.Text.Trim()
-            ));
-
-            dao.GuardarClientes(listaClientes);
-            LimpiarCliente();
-            MessageBox.Show("Cliente guardado ✅", "Éxito",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnLimpiarCliente_Click(object sender, EventArgs e)
-        {
-            LimpiarCliente();
-        }
 
         // ════════════════════════════════════════
         //  TAB NUEVA VENTA — BOTONES
         // ════════════════════════════════════════
-        private void btnBuscarCliente_Click(object sender, EventArgs e)
+      
+
+        // ════════════════════════════════════════
+        //  TAB VENTAS DEL DÍA — BOTONES
+        // ════════════════════════════════════════
+        
+
+        
+
+        private void btnBuscarCliente_Click_1(object sender, EventArgs e)
         {
             string nit = txtNIT.Text.Trim();
             if (string.IsNullOrWhiteSpace(nit))
@@ -325,7 +299,7 @@ namespace Proyecto1
                 if (c.NIT == nit)
                 {
                     clienteActual = c;
-                    txtNombreCliente.Text = clienteActual.NombreCompleto;
+                    txtNombreCliente1.Text = clienteActual.NombreCompleto;
                     break;
                 }
             }
@@ -356,34 +330,79 @@ namespace Proyecto1
             }
         }
 
-        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        // ════════════════════════════════════════
+        //  TAB CLIENTES — BOTONES
+        // ════════════════════════════════════════
+
+        private void btnGuardarCliente_Click_1(object sender, EventArgs e)
         {
-            string codigo = txtCodigoProducto.Text.Trim();
-            if (string.IsNullOrWhiteSpace(codigo))
+            if (!ValidarCliente()) return;
+
+            foreach (var c in listaClientes)
             {
-                MessageBox.Show("Ingresa un código.", "Aviso",
+                if (c.NIT == txtNITCliente.Text.Trim())
+                {
+                    MessageBox.Show("Ya existe un cliente con ese NIT.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            listaClientes.AddLast(new Cliente(
+                txtNITCliente.Text.Trim(),
+                txtNombreCliente2.Text.Trim(),
+                txtApellidoCliente.Text.Trim(),
+                txtDireccionCliente.Text.Trim(),
+                txtTelefonoCliente.Text.Trim()
+            ));
+
+            dao.GuardarClientes(listaClientes);
+            LimpiarCliente();
+            MessageBox.Show("Cliente guardado ✅", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+        private void btnLimpiarCliente_Click_1(object sender, EventArgs e)
+        {
+            LimpiarCliente();
+
+        }
+
+        private void btnRecargarVentas_Click_1(object sender, EventArgs e)
+        {
+            listaFacturas = dao.CargarFacturas();
+            CargarTablaVentas();
+        }
+
+        private void btnMarcarEntregado_Click_1(object sender, EventArgs e)
+        {
+            if (dgvVenta.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona una venta primero.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            foreach (var p in listaProductos)
+            int numero = int.Parse(dgvVenta.SelectedRows[0]
+                                  .Cells["Numero"].Value.ToString());
+
+            foreach (var f in listaFacturas)
             {
-                if (p.Codigo == codigo)
+                if (f.NumeroFactura == numero)
                 {
-                    MessageBox.Show($"Producto: {p.Nombre}\n" +
-                                   $"Precio: {p.PrecioVenta:C}\n" +
-                                   $"Existencia: {p.CantidadExistencia}",
-                                   "Encontrado ✅",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Information);
-                    return;
+                    f.Estado = "Entregado";
+                    break;
                 }
             }
-            MessageBox.Show("Producto no encontrado.", "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            dao.GuardarFacturas(listaFacturas);
+            CargarTablaVentas();
+            MessageBox.Show("Marcada como entregada ✅", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        private void btnAgregarProducto_Click_1(object sender, EventArgs e)
         {
             if (clienteActual == null)
             {
@@ -443,7 +462,34 @@ namespace Proyecto1
             txtCantidadVenta.Text = "1";
         }
 
-        private void btnFinalizarVenta_Click(object sender, EventArgs e)
+        private void btnBuscarProducto_Click_1(object sender, EventArgs e)
+        {
+            string codigo = txtCodigoProducto.Text.Trim();
+            if (string.IsNullOrWhiteSpace(codigo))
+            {
+                MessageBox.Show("Ingresa un código.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            foreach (var p in listaProductos)
+            {
+                if (p.Codigo == codigo)
+                {
+                    MessageBox.Show($"Producto: {p.Nombre}\n" +
+                                   $"Precio: {p.PrecioVenta:C}\n" +
+                                   $"Existencia: {p.CantidadExistencia}",
+                                   "Encontrado ✅",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Information);
+                    return;
+                }
+            }
+            MessageBox.Show("Producto no encontrado.", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnFinalizarVenta_Click_1(object sender, EventArgs e)
         {
             if (clienteActual == null)
             {
@@ -495,42 +541,6 @@ namespace Proyecto1
             var r = MessageBox.Show("¿Cancelar la venta actual?",
                 "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes) LimpiarVenta();
-        }
-
-        // ════════════════════════════════════════
-        //  TAB VENTAS DEL DÍA — BOTONES
-        // ════════════════════════════════════════
-        private void btnMarcarEntregado_Click(object sender, EventArgs e)
-        {
-            if (dgvVentas.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Selecciona una venta primero.", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int numero = int.Parse(dgvVentas.SelectedRows[0]
-                                  .Cells["Numero"].Value.ToString());
-
-            foreach (var f in listaFacturas)
-            {
-                if (f.NumeroFactura == numero)
-                {
-                    f.Estado = "Entregado";
-                    break;
-                }
-            }
-
-            dao.GuardarFacturas(listaFacturas);
-            CargarTablaVentas();
-            MessageBox.Show("Marcada como entregada ✅", "Éxito",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnRecargarVentas_Click(object sender, EventArgs e)
-        {
-            listaFacturas = dao.CargarFacturas();
-            CargarTablaVentas();
         }
     }
 }

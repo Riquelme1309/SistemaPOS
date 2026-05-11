@@ -49,39 +49,39 @@
             this.btnRecargar = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.txtNombreCliente = new System.Windows.Forms.TabPage();
-            this.txtNI = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCodigoProductoo = new System.Windows.Forms.Label();
-            this.txtCantidadVent = new System.Windows.Forms.Label();
-            this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtNIT = new System.Windows.Forms.TextBox();
-            this.txtNombreCliente1 = new System.Windows.Forms.TextBox();
-            this.txtCodigoProducto = new System.Windows.Forms.TextBox();
-            this.txtCantidadVenta = new System.Windows.Forms.TextBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.btnFinalizarVenta = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnFinalizarVenta = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.btnBuscarProducto = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.txtCantidadVenta = new System.Windows.Forms.TextBox();
+            this.txtCodigoProducto = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente1 = new System.Windows.Forms.TextBox();
+            this.txtNIT = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dgvVenta = new System.Windows.Forms.DataGridView();
+            this.txtCantidadVent = new System.Windows.Forms.Label();
+            this.txtCodigoProductoo = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNI = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.btnMarcarEntregado = new System.Windows.Forms.Button();
             this.btnRecargarVentas = new System.Windows.Forms.Button();
+            this.btnMarcarEntregado = new System.Windows.Forms.Button();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnGuardarCliente = new System.Windows.Forms.Button();
-            this.btnLimpiarCliente = new System.Windows.Forms.Button();
-            this.txtNITCliente = new System.Windows.Forms.TextBox();
-            this.txtNombreCliente2 = new System.Windows.Forms.TextBox();
-            this.txtApellidoCliente = new System.Windows.Forms.TextBox();
-            this.txtDireccionCliente = new System.Windows.Forms.TextBox();
             this.txtTelefonoCliente = new System.Windows.Forms.TextBox();
+            this.txtDireccionCliente = new System.Windows.Forms.TextBox();
+            this.txtApellidoCliente = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente2 = new System.Windows.Forms.TextBox();
+            this.txtNITCliente = new System.Windows.Forms.TextBox();
+            this.btnLimpiarCliente = new System.Windows.Forms.Button();
+            this.btnGuardarCliente = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -291,7 +291,8 @@
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.Size = new System.Drawing.Size(786, 368);
             this.dgvProductos.TabIndex = 0;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);            // 
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
+            // 
             // txtNombreCliente
             // 
             this.txtNombreCliente.Controls.Add(this.btnCancelar);
@@ -317,41 +318,101 @@
             this.txtNombreCliente.Text = "Nueva Venta";
             this.txtNombreCliente.UseVisualStyleBackColor = true;
             // 
-            // txtNI
+            // btnCancelar
             // 
-            this.txtNI.AutoSize = true;
-            this.txtNI.Location = new System.Drawing.Point(32, 32);
-            this.txtNI.Name = "txtNI";
-            this.txtNI.Size = new System.Drawing.Size(32, 16);
-            this.txtNI.TabIndex = 0;
-            this.txtNI.Text = "NIT:";
+            this.btnCancelar.Location = new System.Drawing.Point(684, 367);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label7
+            // btnFinalizarVenta
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 16);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Nombre Cliente";
+            this.btnFinalizarVenta.Location = new System.Drawing.Point(501, 367);
+            this.btnFinalizarVenta.Name = "btnFinalizarVenta";
+            this.btnFinalizarVenta.Size = new System.Drawing.Size(75, 23);
+            this.btnFinalizarVenta.TabIndex = 14;
+            this.btnFinalizarVenta.Text = "Finalizar";
+            this.btnFinalizarVenta.UseVisualStyleBackColor = true;
+            this.btnFinalizarVenta.Click += new System.EventHandler(this.btnFinalizarVenta_Click_1);
             // 
-            // txtCodigoProductoo
+            // btnAgregarProducto
             // 
-            this.txtCodigoProductoo.AutoSize = true;
-            this.txtCodigoProductoo.Location = new System.Drawing.Point(23, 131);
-            this.txtCodigoProductoo.Name = "txtCodigoProductoo";
-            this.txtCodigoProductoo.Size = new System.Drawing.Size(108, 16);
-            this.txtCodigoProductoo.TabIndex = 2;
-            this.txtCodigoProductoo.Text = "Código Producto";
+            this.btnAgregarProducto.Location = new System.Drawing.Point(501, 227);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(268, 26);
+            this.btnAgregarProducto.TabIndex = 13;
+            this.btnAgregarProducto.Text = "Agregar Producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click_1);
             // 
-            // txtCantidadVent
+            // btnBuscarProducto
             // 
-            this.txtCantidadVent.AutoSize = true;
-            this.txtCantidadVent.Location = new System.Drawing.Point(59, 183);
-            this.txtCantidadVent.Name = "txtCantidadVent";
-            this.txtCantidadVent.Size = new System.Drawing.Size(61, 16);
-            this.txtCantidadVent.TabIndex = 3;
-            this.txtCantidadVent.Text = "Cantidad";
+            this.btnBuscarProducto.Location = new System.Drawing.Point(684, 286);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(75, 44);
+            this.btnBuscarProducto.TabIndex = 12;
+            this.btnBuscarProducto.Text = "Buscar Producto";
+            this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click_1);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(502, 284);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(75, 46);
+            this.btnBuscarCliente.TabIndex = 11;
+            this.btnBuscarCliente.Text = "Buscar Cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click_1);
+            // 
+            // txtCantidadVenta
+            // 
+            this.txtCantidadVenta.Location = new System.Drawing.Point(183, 183);
+            this.txtCantidadVenta.Name = "txtCantidadVenta";
+            this.txtCantidadVenta.Size = new System.Drawing.Size(259, 22);
+            this.txtCantidadVenta.TabIndex = 10;
+            // 
+            // txtCodigoProducto
+            // 
+            this.txtCodigoProducto.Location = new System.Drawing.Point(183, 133);
+            this.txtCodigoProducto.Name = "txtCodigoProducto";
+            this.txtCodigoProducto.Size = new System.Drawing.Size(259, 22);
+            this.txtCodigoProducto.TabIndex = 9;
+            // 
+            // txtNombreCliente1
+            // 
+            this.txtNombreCliente1.Location = new System.Drawing.Point(188, 83);
+            this.txtNombreCliente1.Name = "txtNombreCliente1";
+            this.txtNombreCliente1.Size = new System.Drawing.Size(254, 22);
+            this.txtNombreCliente1.TabIndex = 8;
+            // 
+            // txtNIT
+            // 
+            this.txtNIT.Location = new System.Drawing.Point(183, 32);
+            this.txtNIT.Name = "txtNIT";
+            this.txtNIT.Size = new System.Drawing.Size(259, 22);
+            this.txtNIT.TabIndex = 7;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(104, 253);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(44, 16);
+            this.lblTotal.TabIndex = 6;
+            this.lblTotal.Text = "Q 0.00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 16);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Total";
             // 
             // dgvVenta
             // 
@@ -363,96 +424,41 @@
             this.dgvVenta.Size = new System.Drawing.Size(233, 175);
             this.dgvVenta.TabIndex = 4;
             // 
-            // label8
+            // txtCantidadVent
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 253);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 16);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Total";
+            this.txtCantidadVent.AutoSize = true;
+            this.txtCantidadVent.Location = new System.Drawing.Point(59, 183);
+            this.txtCantidadVent.Name = "txtCantidadVent";
+            this.txtCantidadVent.Size = new System.Drawing.Size(61, 16);
+            this.txtCantidadVent.TabIndex = 3;
+            this.txtCantidadVent.Text = "Cantidad";
             // 
-            // lblTotal
+            // txtCodigoProductoo
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(104, 253);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(44, 16);
-            this.lblTotal.TabIndex = 6;
-            this.lblTotal.Text = "Q 0.00";
+            this.txtCodigoProductoo.AutoSize = true;
+            this.txtCodigoProductoo.Location = new System.Drawing.Point(23, 131);
+            this.txtCodigoProductoo.Name = "txtCodigoProductoo";
+            this.txtCodigoProductoo.Size = new System.Drawing.Size(108, 16);
+            this.txtCodigoProductoo.TabIndex = 2;
+            this.txtCodigoProductoo.Text = "Código Producto";
             // 
-            // txtNIT
+            // label7
             // 
-            this.txtNIT.Location = new System.Drawing.Point(183, 32);
-            this.txtNIT.Name = "txtNIT";
-            this.txtNIT.Size = new System.Drawing.Size(259, 22);
-            this.txtNIT.TabIndex = 7;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(31, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 16);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Nombre Cliente";
             // 
-            // txtNombreCliente1
+            // txtNI
             // 
-            this.txtNombreCliente1.Location = new System.Drawing.Point(188, 83);
-            this.txtNombreCliente1.Name = "txtNombreCliente1";
-            this.txtNombreCliente1.Size = new System.Drawing.Size(254, 22);
-            this.txtNombreCliente1.TabIndex = 8;
-            // 
-            // txtCodigoProducto
-            // 
-            this.txtCodigoProducto.Location = new System.Drawing.Point(183, 133);
-            this.txtCodigoProducto.Name = "txtCodigoProducto";
-            this.txtCodigoProducto.Size = new System.Drawing.Size(259, 22);
-            this.txtCodigoProducto.TabIndex = 9;
-            // 
-            // txtCantidadVenta
-            // 
-            this.txtCantidadVenta.Location = new System.Drawing.Point(183, 183);
-            this.txtCantidadVenta.Name = "txtCantidadVenta";
-            this.txtCantidadVenta.Size = new System.Drawing.Size(259, 22);
-            this.txtCantidadVenta.TabIndex = 10;
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(502, 284);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(75, 46);
-            this.btnBuscarCliente.TabIndex = 11;
-            this.btnBuscarCliente.Text = "Buscar Cliente";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarProducto
-            // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(684, 286);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(75, 44);
-            this.btnBuscarProducto.TabIndex = 12;
-            this.btnBuscarProducto.Text = "Buscar Producto";
-            this.btnBuscarProducto.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarProducto
-            // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(501, 227);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(268, 26);
-            this.btnAgregarProducto.TabIndex = 13;
-            this.btnAgregarProducto.Text = "Agregar Producto";
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            // 
-            // btnFinalizarVenta
-            // 
-            this.btnFinalizarVenta.Location = new System.Drawing.Point(501, 367);
-            this.btnFinalizarVenta.Name = "btnFinalizarVenta";
-            this.btnFinalizarVenta.Size = new System.Drawing.Size(75, 23);
-            this.btnFinalizarVenta.TabIndex = 14;
-            this.btnFinalizarVenta.Text = "Finalizar";
-            this.btnFinalizarVenta.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(684, 367);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.txtNI.AutoSize = true;
+            this.txtNI.Location = new System.Drawing.Point(32, 32);
+            this.txtNI.Name = "txtNI";
+            this.txtNI.Size = new System.Drawing.Size(32, 16);
+            this.txtNI.TabIndex = 0;
+            this.txtNI.Text = "NIT:";
             // 
             // tabPage3
             // 
@@ -466,15 +472,15 @@
             this.tabPage3.Text = "Ventas del día";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dgvVentas
+            // btnRecargarVentas
             // 
-            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(8, 8);
-            this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.RowHeadersWidth = 51;
-            this.dgvVentas.RowTemplate.Height = 24;
-            this.dgvVentas.Size = new System.Drawing.Size(773, 342);
-            this.dgvVentas.TabIndex = 0;
+            this.btnRecargarVentas.Location = new System.Drawing.Point(474, 373);
+            this.btnRecargarVentas.Name = "btnRecargarVentas";
+            this.btnRecargarVentas.Size = new System.Drawing.Size(101, 38);
+            this.btnRecargarVentas.TabIndex = 2;
+            this.btnRecargarVentas.Text = "Recargar";
+            this.btnRecargarVentas.UseVisualStyleBackColor = true;
+            this.btnRecargarVentas.Click += new System.EventHandler(this.btnRecargarVentas_Click_1);
             // 
             // btnMarcarEntregado
             // 
@@ -484,15 +490,17 @@
             this.btnMarcarEntregado.TabIndex = 1;
             this.btnMarcarEntregado.Text = "Marcar Entregado";
             this.btnMarcarEntregado.UseVisualStyleBackColor = true;
+            this.btnMarcarEntregado.Click += new System.EventHandler(this.btnMarcarEntregado_Click_1);
             // 
-            // btnRecargarVentas
+            // dgvVentas
             // 
-            this.btnRecargarVentas.Location = new System.Drawing.Point(474, 373);
-            this.btnRecargarVentas.Name = "btnRecargarVentas";
-            this.btnRecargarVentas.Size = new System.Drawing.Size(101, 38);
-            this.btnRecargarVentas.TabIndex = 2;
-            this.btnRecargarVentas.Text = "Recargar";
-            this.btnRecargarVentas.UseVisualStyleBackColor = true;
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Location = new System.Drawing.Point(8, 8);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.RowHeadersWidth = 51;
+            this.dgvVentas.RowTemplate.Height = 24;
+            this.dgvVentas.Size = new System.Drawing.Size(773, 342);
+            this.dgvVentas.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -515,41 +523,60 @@
             this.tabPage4.Text = "Clientes";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // txtTelefonoCliente
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(46, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 16);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "NIT:";
+            this.txtTelefonoCliente.Location = new System.Drawing.Point(134, 262);
+            this.txtTelefonoCliente.Name = "txtTelefonoCliente";
+            this.txtTelefonoCliente.Size = new System.Drawing.Size(275, 22);
+            this.txtTelefonoCliente.TabIndex = 14;
             // 
-            // label10
+            // txtDireccionCliente
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(46, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 16);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Nombre:";
+            this.txtDireccionCliente.Location = new System.Drawing.Point(134, 207);
+            this.txtDireccionCliente.Name = "txtDireccionCliente";
+            this.txtDireccionCliente.Size = new System.Drawing.Size(275, 22);
+            this.txtDireccionCliente.TabIndex = 13;
             // 
-            // label11
+            // txtApellidoCliente
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(46, 148);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 16);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Apellido";
+            this.txtApellidoCliente.Location = new System.Drawing.Point(134, 153);
+            this.txtApellidoCliente.Name = "txtApellidoCliente";
+            this.txtApellidoCliente.Size = new System.Drawing.Size(275, 22);
+            this.txtApellidoCliente.TabIndex = 12;
             // 
-            // label13
+            // txtNombreCliente2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(49, 248);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 16);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Teléfono:";
+            this.txtNombreCliente2.Location = new System.Drawing.Point(127, 94);
+            this.txtNombreCliente2.Name = "txtNombreCliente2";
+            this.txtNombreCliente2.Size = new System.Drawing.Size(282, 22);
+            this.txtNombreCliente2.TabIndex = 11;
+            // 
+            // txtNITCliente
+            // 
+            this.txtNITCliente.Location = new System.Drawing.Point(127, 32);
+            this.txtNITCliente.Name = "txtNITCliente";
+            this.txtNITCliente.Size = new System.Drawing.Size(282, 22);
+            this.txtNITCliente.TabIndex = 10;
+            // 
+            // btnLimpiarCliente
+            // 
+            this.btnLimpiarCliente.Location = new System.Drawing.Point(473, 345);
+            this.btnLimpiarCliente.Name = "btnLimpiarCliente";
+            this.btnLimpiarCliente.Size = new System.Drawing.Size(113, 50);
+            this.btnLimpiarCliente.TabIndex = 9;
+            this.btnLimpiarCliente.Text = "Limpiar";
+            this.btnLimpiarCliente.UseVisualStyleBackColor = true;
+            this.btnLimpiarCliente.Click += new System.EventHandler(this.btnLimpiarCliente_Click_1);
+            // 
+            // btnGuardarCliente
+            // 
+            this.btnGuardarCliente.Location = new System.Drawing.Point(151, 345);
+            this.btnGuardarCliente.Name = "btnGuardarCliente";
+            this.btnGuardarCliente.Size = new System.Drawing.Size(125, 50);
+            this.btnGuardarCliente.TabIndex = 8;
+            this.btnGuardarCliente.Text = "Guardar";
+            this.btnGuardarCliente.UseVisualStyleBackColor = true;
+            this.btnGuardarCliente.Click += new System.EventHandler(this.btnGuardarCliente_Click_1);
             // 
             // label12
             // 
@@ -560,58 +587,41 @@
             this.label12.TabIndex = 7;
             this.label12.Text = "Dirección:";
             // 
-            // btnGuardarCliente
+            // label13
             // 
-            this.btnGuardarCliente.Location = new System.Drawing.Point(151, 345);
-            this.btnGuardarCliente.Name = "btnGuardarCliente";
-            this.btnGuardarCliente.Size = new System.Drawing.Size(125, 50);
-            this.btnGuardarCliente.TabIndex = 8;
-            this.btnGuardarCliente.Text = "Guardar";
-            this.btnGuardarCliente.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(49, 248);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 16);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Teléfono:";
             // 
-            // btnLimpiarCliente
+            // label11
             // 
-            this.btnLimpiarCliente.Location = new System.Drawing.Point(473, 345);
-            this.btnLimpiarCliente.Name = "btnLimpiarCliente";
-            this.btnLimpiarCliente.Size = new System.Drawing.Size(113, 50);
-            this.btnLimpiarCliente.TabIndex = 9;
-            this.btnLimpiarCliente.Text = "Limpiar";
-            this.btnLimpiarCliente.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(46, 148);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 16);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Apellido";
             // 
-            // txtNITCliente
+            // label10
             // 
-            this.txtNITCliente.Location = new System.Drawing.Point(127, 32);
-            this.txtNITCliente.Name = "txtNITCliente";
-            this.txtNITCliente.Size = new System.Drawing.Size(282, 22);
-            this.txtNITCliente.TabIndex = 10;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(46, 93);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 16);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Nombre:";
             // 
-            // txtNombreCliente2
+            // label9
             // 
-            this.txtNombreCliente2.Location = new System.Drawing.Point(127, 94);
-            this.txtNombreCliente2.Name = "txtNombreCliente2";
-            this.txtNombreCliente2.Size = new System.Drawing.Size(282, 22);
-            this.txtNombreCliente2.TabIndex = 11;
-            // 
-            // txtApellidoCliente
-            // 
-            this.txtApellidoCliente.Location = new System.Drawing.Point(134, 153);
-            this.txtApellidoCliente.Name = "txtApellidoCliente";
-            this.txtApellidoCliente.Size = new System.Drawing.Size(275, 22);
-            this.txtApellidoCliente.TabIndex = 12;
-            // 
-            // txtDireccionCliente
-            // 
-            this.txtDireccionCliente.Location = new System.Drawing.Point(134, 207);
-            this.txtDireccionCliente.Name = "txtDireccionCliente";
-            this.txtDireccionCliente.Size = new System.Drawing.Size(275, 22);
-            this.txtDireccionCliente.TabIndex = 13;
-            // 
-            // txtTelefonoCliente
-            // 
-            this.txtTelefonoCliente.Location = new System.Drawing.Point(134, 262);
-            this.txtTelefonoCliente.Name = "txtTelefonoCliente";
-            this.txtTelefonoCliente.Size = new System.Drawing.Size(275, 22);
-            this.txtTelefonoCliente.TabIndex = 14;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(46, 35);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 16);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "NIT:";
             // 
             // Form1
             // 
