@@ -85,7 +85,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 397);
+            this.tabPage1.Size = new System.Drawing.Size(792, 421);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -206,6 +206,7 @@
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -215,6 +216,7 @@
             this.btnEditar.TabIndex = 14;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnLimpiar
             // 
@@ -224,17 +226,20 @@
             this.btnLimpiar.TabIndex = 15;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvProductos.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvProductos.Location = new System.Drawing.Point(3, 3);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.Size = new System.Drawing.Size(786, 368);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // btnRecargar
             // 
@@ -244,6 +249,7 @@
             this.btnRecargar.TabIndex = 1;
             this.btnRecargar.Text = "Recargar";
             this.btnRecargar.UseVisualStyleBackColor = true;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // Form1
             // 
