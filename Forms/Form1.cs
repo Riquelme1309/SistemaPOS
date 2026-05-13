@@ -82,16 +82,16 @@ namespace Proyecto1
 
         private void CargarTablaVentas()
         {
-            dgvVenta.Rows.Clear();
-            dgvVenta.Columns.Clear();
-            dgvVenta.Columns.Add("Numero", "N° Factura");
-            dgvVenta.Columns.Add("NIT", "NIT");
-            dgvVenta.Columns.Add("Fecha", "Fecha");
-            dgvVenta.Columns.Add("Estado", "Estado");
-            dgvVenta.Columns.Add("Total", "Total");
+            dgvVentas.Rows.Clear();
+            dgvVentas.Columns.Clear();
+            dgvVentas.Columns.Add("Numero", "N° Factura");
+            dgvVentas.Columns.Add("NIT", "NIT");
+            dgvVentas.Columns.Add("Fecha", "Fecha");
+            dgvVentas.Columns.Add("Estado", "Estado");
+            dgvVentas.Columns.Add("Total", "Total");
 
             foreach (var f in listaFacturas)
-                dgvVenta.Rows.Add(
+                dgvVentas.Rows.Add(
                     f.NumeroFactura,
                     f.NIT,
                     f.Fecha.ToString("dd/MM/yyyy HH:mm"),
@@ -377,14 +377,14 @@ namespace Proyecto1
 
         private void btnMarcarEntregado_Click_1(object sender, EventArgs e)
         {
-            if (dgvVenta.SelectedRows.Count == 0)
+            if (dgvVentas.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecciona una venta primero.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int numero = int.Parse(dgvVenta.SelectedRows[0]
+            int numero = int.Parse(dgvVentas.SelectedRows[0]
                                   .Cells["Numero"].Value.ToString());
 
             foreach (var f in listaFacturas)
@@ -541,6 +541,16 @@ namespace Proyecto1
             var r = MessageBox.Show("¿Cancelar la venta actual?",
                 "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes) LimpiarVenta();
+        }
+
+        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

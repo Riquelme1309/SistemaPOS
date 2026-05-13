@@ -423,6 +423,7 @@
             this.dgvVenta.RowTemplate.Height = 24;
             this.dgvVenta.Size = new System.Drawing.Size(233, 175);
             this.dgvVenta.TabIndex = 4;
+            this.dgvVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellContentClick);
             // 
             // txtCantidadVent
             // 
@@ -474,7 +475,7 @@
             // 
             // btnRecargarVentas
             // 
-            this.btnRecargarVentas.Location = new System.Drawing.Point(474, 373);
+            this.btnRecargarVentas.Location = new System.Drawing.Point(475, 372);
             this.btnRecargarVentas.Name = "btnRecargarVentas";
             this.btnRecargarVentas.Size = new System.Drawing.Size(101, 38);
             this.btnRecargarVentas.TabIndex = 2;
@@ -501,6 +502,7 @@
             this.dgvVentas.RowTemplate.Height = 24;
             this.dgvVentas.Size = new System.Drawing.Size(773, 342);
             this.dgvVentas.TabIndex = 0;
+            this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
             // 
             // tabPage4
             // 
