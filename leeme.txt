@@ -1,0 +1,24 @@
+PROYECTO PUNTO DE VENTA - Programación III
+Sección E
+Integrantes:
+- 202508008 - Riquelme Monzón
+- 252508031 - Angel Daniel
+
+PUNTOS DESARROLLADOS:
+- Mantenimiento de productos (agregar y editar)
+- Registro de clientes nuevos
+- Módulo de nueva venta con generación de factura automática
+- Control de existencias automático al finalizar venta
+- Ventas del día con opción de marcar como entregado
+- Reportes: pendientes de entregar, más vendidos, 
+  ventas por fecha y ganancias por fecha
+- Persistencia de datos en archivos de texto
+
+LIMITACIONES:
+- No se implementó cobro con tarjeta de crédito 
+  (indicado en el enunciado como no requerido)
+- La búsqueda de productos es solo por código
+
+TECNOLOGÍA USADA:
+- C# con Windows Forms (.NET Framework)
+- Persistencia en archivos de texto
