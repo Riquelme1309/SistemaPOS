@@ -362,7 +362,145 @@ namespace Proyecto1
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // ════════════════════════════════════════
+        //  TAB REPORTES
+        // ════════════════════════════════════════
 
+        private void CargarReportePendientes()
+        {
+            dgvReportes.Rows.Clear();
+            dgvReportes.Columns.Clear();
+            dgvReportes.Columns.Add("Numero", "N° Factura");
+            dgvReportes.Columns.Add("NIT", "NIT");
+            dgvReportes.Columns.Add("Fecha", "Fecha");
+            dgvReportes.Columns.Add("Total", "Total");
+
+            foreach (var f in listaFacturas)
+            {
+                if (f.Estado == "No entregado")
+                    dgvReportes.Rows.Add(
+                        f.NumeroFactura,
+                        f.NIT,
+                        f.Fecha.ToString("dd/MM/yyyy HH:mm"),
+                        f.Total.ToString("C")
+                    );
+            }
+        }
+
+        private void CargarReporteMasVendidos()
+        {
+            // Diccionario para acumular cantidades por producto
+            Dictionary<string, int> vendidos = new Dictionary<string, int>();
+            Dictionary<string, string> nombres = new Dictionary<string, string>();
+
+            foreach (var f in listaFacturas)
+            {
+                foreach (var d in f.Detalles)
+                {
+                    if (vendidos.ContainsKey(d.CodigoProducto))
+                        vendidos[d.CodigoProducto] += d.Cantidad;
+                    else
+                    {
+                        vendidos[d.CodigoProducto] = d.Cantidad;
+                        nombres[d.CodigoProducto] = d.NombreProducto;
+                    }
+                }
+            }
+
+            // Ordenar de mayor a menor
+            var ordenados = new LinkedList<KeyValuePair<string, int>>();
+            foreach (var par in vendidos)
+            {
+                var nodo = ordenados.First;
+                bool insertado = false;
+                while (nodo != null)
+                {
+                    if (par.Value >= nodo.Value.Value)
+                    {
+                        ordenados.AddBefore(nodo, par);
+                        insertado = true;
+                        break;
+                    }
+                    nodo = nodo.Next;
+                }
+                if (!insertado) ordenados.AddLast(par);
+            }
+
+            dgvReportes.Rows.Clear();
+            dgvReportes.Columns.Clear();
+            dgvReportes.Columns.Add("Codigo", "Código");
+            dgvReportes.Columns.Add("Nombre", "Nombre");
+            dgvReportes.Columns.Add("Cantidad", "Total Vendido");
+
+            foreach (var par in ordenados)
+                dgvReportes.Rows.Add(par.Key, nombres[par.Key], par.Value);
+        }
+
+        private void CargarReporteVentasPorFecha(DateTime desde, DateTime hasta)
+        {
+            dgvReportes.Rows.Clear();
+            dgvReportes.Columns.Clear();
+            dgvReportes.Columns.Add("Numero", "N° Factura");
+            dgvReportes.Columns.Add("Fecha", "Fecha");
+            dgvReportes.Columns.Add("NIT", "NIT");
+            dgvReportes.Columns.Add("Total", "Total Venta");
+
+            double totalGeneral = 0;
+
+            foreach (var f in listaFacturas)
+            {
+                if (f.Fecha.Date >= desde.Date && f.Fecha.Date <= hasta.Date)
+                {
+                    dgvReportes.Rows.Add(
+                        f.NumeroFactura,
+                        f.Fecha.ToString("dd/MM/yyyy"),
+                        f.NIT,
+                        f.Total.ToString("C")
+                    );
+                    totalGeneral += f.Total;
+                }
+            }
+
+            lblTotalReporte.Text = $"Total ventas: {totalGeneral:C}";
+        }
+
+        private void CargarReporteGanancias(DateTime desde, DateTime hasta)
+        {
+            dgvReportes.Rows.Clear();
+            dgvReportes.Columns.Clear();
+            dgvReportes.Columns.Add("Numero", "N° Factura");
+            dgvReportes.Columns.Add("Fecha", "Fecha");
+            dgvReportes.Columns.Add("Ganancia", "Ganancia");
+
+            double gananciaTotal = 0;
+
+            foreach (var f in listaFacturas)
+            {
+                if (f.Fecha.Date >= desde.Date && f.Fecha.Date <= hasta.Date)
+                {
+                    double gananciaFactura = 0;
+                    foreach (var d in f.Detalles)
+                    {
+                        foreach (var p in listaProductos)
+                        {
+                            if (p.Codigo == d.CodigoProducto)
+                            {
+                                gananciaFactura += (p.PrecioVenta - p.PrecioCompra) * d.Cantidad;
+                                break;
+                            }
+                        }
+                    }
+                    dgvReportes.Rows.Add(
+                        f.NumeroFactura,
+                        f.Fecha.ToString("dd/MM/yyyy"),
+                        gananciaFactura.ToString("C")
+                    );
+                    gananciaTotal += gananciaFactura;
+                }
+            }
+
+            lblTotalReporte.Text = $"Ganancia total: {gananciaTotal:C}";
+        }
         private void btnLimpiarCliente_Click_1(object sender, EventArgs e)
         {
             LimpiarCliente();
@@ -551,6 +689,29 @@ namespace Proyecto1
         private void dgvVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnPendientes_Click(object sender, EventArgs e)
+        {
+            lblTotalReporte.Text = "";
+            CargarReportePendientes();
+        }
+
+        private void btnMasVendidos_Click(object sender, EventArgs e)
+        {
+
+            lblTotalReporte.Text = "";
+            CargarReporteMasVendidos();
+        }
+
+        private void btnVentasPorFecha_Click(object sender, EventArgs e)
+        {
+            CargarReporteVentasPorFecha(dtpDesde.Value, dtpHasta.Value);
+        }
+
+        private void btnGanancias_Click(object sender, EventArgs e)
+        {
+            CargarReporteGanancias(dtpDesde.Value, dtpHasta.Value);
         }
     }
 }

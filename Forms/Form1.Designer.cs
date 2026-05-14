@@ -82,6 +82,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnPendientes = new System.Windows.Forms.Button();
+            this.btnMasVendidos = new System.Windows.Forms.Button();
+            this.btnVentasPorFecha = new System.Windows.Forms.Button();
+            this.btnGanancias = new System.Windows.Forms.Button();
+            this.dgvReportes = new System.Windows.Forms.DataGridView();
+            this.lblTotalReporte = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,6 +102,8 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -100,6 +113,7 @@
             this.tabControl1.Controls.Add(this.txtNombreCliente);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -625,6 +639,116 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "NIT:";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.lblTotalReporte);
+            this.tabPage5.Controls.Add(this.dgvReportes);
+            this.tabPage5.Controls.Add(this.btnGanancias);
+            this.tabPage5.Controls.Add(this.btnVentasPorFecha);
+            this.tabPage5.Controls.Add(this.btnMasVendidos);
+            this.tabPage5.Controls.Add(this.btnPendientes);
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.label14);
+            this.tabPage5.Controls.Add(this.dtpHasta);
+            this.tabPage5.Controls.Add(this.dtpDesde);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(792, 421);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "Reportes";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Location = new System.Drawing.Point(70, 20);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(200, 22);
+            this.dtpDesde.TabIndex = 0;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Location = new System.Drawing.Point(70, 74);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(200, 22);
+            this.dtpHasta.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(333, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(48, 16);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Desde";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(333, 79);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 16);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Hasta";
+            // 
+            // btnPendientes
+            // 
+            this.btnPendientes.Location = new System.Drawing.Point(25, 133);
+            this.btnPendientes.Name = "btnPendientes";
+            this.btnPendientes.Size = new System.Drawing.Size(148, 37);
+            this.btnPendientes.TabIndex = 4;
+            this.btnPendientes.Text = "Pendientes entregar";
+            this.btnPendientes.UseVisualStyleBackColor = true;
+            this.btnPendientes.Click += new System.EventHandler(this.btnPendientes_Click);
+            // 
+            // btnMasVendidos
+            // 
+            this.btnMasVendidos.Location = new System.Drawing.Point(205, 133);
+            this.btnMasVendidos.Name = "btnMasVendidos";
+            this.btnMasVendidos.Size = new System.Drawing.Size(131, 37);
+            this.btnMasVendidos.TabIndex = 5;
+            this.btnMasVendidos.Text = "Mas vendido";
+            this.btnMasVendidos.UseVisualStyleBackColor = true;
+            this.btnMasVendidos.Click += new System.EventHandler(this.btnMasVendidos_Click);
+            // 
+            // btnVentasPorFecha
+            // 
+            this.btnVentasPorFecha.Location = new System.Drawing.Point(407, 133);
+            this.btnVentasPorFecha.Name = "btnVentasPorFecha";
+            this.btnVentasPorFecha.Size = new System.Drawing.Size(131, 37);
+            this.btnVentasPorFecha.TabIndex = 6;
+            this.btnVentasPorFecha.Text = "Venta por fecha";
+            this.btnVentasPorFecha.UseVisualStyleBackColor = true;
+            this.btnVentasPorFecha.Click += new System.EventHandler(this.btnVentasPorFecha_Click);
+            // 
+            // btnGanancias
+            // 
+            this.btnGanancias.Location = new System.Drawing.Point(605, 133);
+            this.btnGanancias.Name = "btnGanancias";
+            this.btnGanancias.Size = new System.Drawing.Size(148, 37);
+            this.btnGanancias.TabIndex = 7;
+            this.btnGanancias.Text = "Ganancias por fecha";
+            this.btnGanancias.UseVisualStyleBackColor = true;
+            this.btnGanancias.Click += new System.EventHandler(this.btnGanancias_Click);
+            // 
+            // dgvReportes
+            // 
+            this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReportes.Location = new System.Drawing.Point(25, 187);
+            this.dgvReportes.Name = "dgvReportes";
+            this.dgvReportes.RowHeadersWidth = 51;
+            this.dgvReportes.RowTemplate.Height = 24;
+            this.dgvReportes.Size = new System.Drawing.Size(728, 150);
+            this.dgvReportes.TabIndex = 8;
+            // 
+            // lblTotalReporte
+            // 
+            this.lblTotalReporte.AutoSize = true;
+            this.lblTotalReporte.Location = new System.Drawing.Point(345, 367);
+            this.lblTotalReporte.Name = "lblTotalReporte";
+            this.lblTotalReporte.Size = new System.Drawing.Size(101, 16);
+            this.lblTotalReporte.TabIndex = 9;
+            this.lblTotalReporte.Text = "lblTotalReporte";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -645,6 +769,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -705,6 +832,17 @@
         private System.Windows.Forms.TextBox txtNITCliente;
         private System.Windows.Forms.Button btnLimpiarCliente;
         private System.Windows.Forms.Button btnGuardarCliente;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btnPendientes;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.Button btnGanancias;
+        private System.Windows.Forms.Button btnVentasPorFecha;
+        private System.Windows.Forms.Button btnMasVendidos;
+        private System.Windows.Forms.DataGridView dgvReportes;
+        private System.Windows.Forms.Label lblTotalReporte;
     }
 }
 
