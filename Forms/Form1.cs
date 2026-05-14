@@ -8,7 +8,7 @@ namespace Proyecto1
 {
     public partial class Form1 : Form
     {
-        // ─── Variables globales ───
+        //Variables globales
         private LinkedList<Producto> listaProductos;
         private LinkedList<Cliente> listaClientes;
         private LinkedList<Factura> listaFacturas;
@@ -30,9 +30,7 @@ namespace Proyecto1
             CargarTablaVentas();
         }
 
-        // ════════════════════════════════════════
-        //  CARGAR TABLAS
-        // ════════════════════════════════════════
+        //CARGAR TABLAS
         private void CargarTablaProductos()
         {
             dgvProductos.Rows.Clear();
@@ -99,10 +97,7 @@ namespace Proyecto1
                     f.Total.ToString("C")
                 );
         }
-
-        // ════════════════════════════════════════
         //  LIMPIAR
-        // ════════════════════════════════════════
         private void LimpiarProducto()
         {
             txtCodigo.Text = "";
@@ -134,10 +129,7 @@ namespace Proyecto1
             txtDireccionCliente.Text = "";
             txtTelefonoCliente.Text = "";
         }
-
-        // ════════════════════════════════════════
-        //  VALIDAR
-        // ════════════════════════════════════════
+        //VALIDAR
         private bool ValidarProducto()
         {
             if (string.IsNullOrWhiteSpace(txtCodigo.Text) ||
@@ -176,10 +168,7 @@ namespace Proyecto1
             }
             return true;
         }
-
-        // ════════════════════════════════════════
         //  TAB PRODUCTOS — BOTONES
-        // ════════════════════════════════════════
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!ValidarProducto()) return;
@@ -270,19 +259,7 @@ namespace Proyecto1
             }
         }
 
-
-        // ════════════════════════════════════════
-        //  TAB NUEVA VENTA — BOTONES
-        // ════════════════════════════════════════
-      
-
-        // ════════════════════════════════════════
-        //  TAB VENTAS DEL DÍA — BOTONES
-        // ════════════════════════════════════════
-        
-
-        
-
+        //TAB NUEVA VENTA — BOTONES
         private void btnBuscarCliente_Click_1(object sender, EventArgs e)
         {
             string nit = txtNIT.Text.Trim();
@@ -330,9 +307,7 @@ namespace Proyecto1
             }
         }
 
-        // ════════════════════════════════════════
         //  TAB CLIENTES — BOTONES
-        // ════════════════════════════════════════
 
         private void btnGuardarCliente_Click_1(object sender, EventArgs e)
         {
@@ -362,10 +337,7 @@ namespace Proyecto1
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // ════════════════════════════════════════
         //  TAB REPORTES
-        // ════════════════════════════════════════
-
         private void CargarReportePendientes()
         {
             dgvReportes.Rows.Clear();
@@ -507,6 +479,7 @@ namespace Proyecto1
 
         }
 
+        //TAB VENTAS DEL DÍA — BOTONES
         private void btnRecargarVentas_Click_1(object sender, EventArgs e)
         {
             listaFacturas = dao.CargarFacturas();
