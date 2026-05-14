@@ -195,7 +195,7 @@ namespace Proyecto1
             dao.GuardarProductos(listaProductos);
             CargarTablaProductos();
             LimpiarProducto();
-            MessageBox.Show("Producto agregado ✅", "Éxito",
+            MessageBox.Show("Producto agregado", "Éxito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -218,7 +218,7 @@ namespace Proyecto1
             dao.GuardarProductos(listaProductos);
             CargarTablaProductos();
             LimpiarProducto();
-            MessageBox.Show("Producto editado ✅", "Éxito",
+            MessageBox.Show("Producto editado", "Éxito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -231,7 +231,7 @@ namespace Proyecto1
         {
             listaProductos = dao.CargarProductos();
             CargarTablaProductos();
-            MessageBox.Show("Lista actualizada ✅", "Éxito",
+            MessageBox.Show("Lista actualizada", "Éxito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -302,7 +302,7 @@ namespace Proyecto1
             }
             else
             {
-                MessageBox.Show($"Cliente: {clienteActual.NombreCompleto} ✅",
+                MessageBox.Show($"Cliente: {clienteActual.NombreCompleto}",
                     "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -333,7 +333,7 @@ namespace Proyecto1
 
             dao.GuardarClientes(listaClientes);
             LimpiarCliente();
-            MessageBox.Show("Cliente guardado ✅", "Éxito",
+            MessageBox.Show("Cliente guardado", "Éxito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -509,7 +509,7 @@ namespace Proyecto1
 
             dao.GuardarFacturas(listaFacturas);
             CargarTablaVentas();
-            MessageBox.Show("Marcada como entregada ✅", "Éxito",
+            MessageBox.Show("Marcada como entregada", "Éxito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -590,7 +590,7 @@ namespace Proyecto1
                     MessageBox.Show($"Producto: {p.Nombre}\n" +
                                    $"Precio: {p.PrecioVenta:C}\n" +
                                    $"Existencia: {p.CantidadExistencia}",
-                                   "Encontrado ✅",
+                                   "Encontrado",
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Information);
                     return;

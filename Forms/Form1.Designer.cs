@@ -83,16 +83,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnPendientes = new System.Windows.Forms.Button();
-            this.btnMasVendidos = new System.Windows.Forms.Button();
-            this.btnVentasPorFecha = new System.Windows.Forms.Button();
-            this.btnGanancias = new System.Windows.Forms.Button();
-            this.dgvReportes = new System.Windows.Forms.DataGridView();
             this.lblTotalReporte = new System.Windows.Forms.Label();
+            this.dgvReportes = new System.Windows.Forms.DataGridView();
+            this.btnGanancias = new System.Windows.Forms.Button();
+            this.btnVentasPorFecha = new System.Windows.Forms.Button();
+            this.btnMasVendidos = new System.Windows.Forms.Button();
+            this.btnPendientes = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -109,16 +109,16 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.txtNombreCliente);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 450);
+            this.tabControl1.Size = new System.Drawing.Size(793, 450);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -141,7 +141,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 421);
+            this.tabPage1.Size = new System.Drawing.Size(785, 421);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -279,7 +279,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 421);
+            this.tabPage2.Size = new System.Drawing.Size(785, 421);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lista de Productos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(786, 368);
+            this.dgvProductos.Size = new System.Drawing.Size(779, 368);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -327,7 +327,7 @@
             this.txtNombreCliente.Controls.Add(this.txtNI);
             this.txtNombreCliente.Location = new System.Drawing.Point(4, 25);
             this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(792, 421);
+            this.txtNombreCliente.Size = new System.Drawing.Size(785, 421);
             this.txtNombreCliente.TabIndex = 2;
             this.txtNombreCliente.Text = "Nueva Venta";
             this.txtNombreCliente.UseVisualStyleBackColor = true;
@@ -354,7 +354,7 @@
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(501, 227);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(491, 248);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(268, 26);
             this.btnAgregarProducto.TabIndex = 13;
@@ -374,7 +374,7 @@
             // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(502, 284);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(501, 297);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(75, 46);
             this.btnBuscarCliente.TabIndex = 11;
@@ -431,11 +431,11 @@
             // dgvVenta
             // 
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVenta.Location = new System.Drawing.Point(537, 23);
+            this.dgvVenta.Location = new System.Drawing.Point(448, 23);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.RowHeadersWidth = 51;
             this.dgvVenta.RowTemplate.Height = 24;
-            this.dgvVenta.Size = new System.Drawing.Size(233, 175);
+            this.dgvVenta.Size = new System.Drawing.Size(322, 209);
             this.dgvVenta.TabIndex = 4;
             this.dgvVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellContentClick);
             // 
@@ -482,7 +482,7 @@
             this.tabPage3.Controls.Add(this.dgvVentas);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(792, 421);
+            this.tabPage3.Size = new System.Drawing.Size(785, 421);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Ventas del día";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -535,7 +535,7 @@
             this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(792, 421);
+            this.tabPage4.Size = new System.Drawing.Size(785, 421);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Clientes";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -654,82 +654,19 @@
             this.tabPage5.Controls.Add(this.dtpDesde);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(792, 421);
+            this.tabPage5.Size = new System.Drawing.Size(785, 421);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Reportes";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // dtpDesde
+            // lblTotalReporte
             // 
-            this.dtpDesde.Location = new System.Drawing.Point(70, 20);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(200, 22);
-            this.dtpDesde.TabIndex = 0;
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.Location = new System.Drawing.Point(70, 74);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(200, 22);
-            this.dtpHasta.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(333, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(48, 16);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Desde";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(333, 79);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 16);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Hasta";
-            // 
-            // btnPendientes
-            // 
-            this.btnPendientes.Location = new System.Drawing.Point(25, 133);
-            this.btnPendientes.Name = "btnPendientes";
-            this.btnPendientes.Size = new System.Drawing.Size(148, 37);
-            this.btnPendientes.TabIndex = 4;
-            this.btnPendientes.Text = "Pendientes entregar";
-            this.btnPendientes.UseVisualStyleBackColor = true;
-            this.btnPendientes.Click += new System.EventHandler(this.btnPendientes_Click);
-            // 
-            // btnMasVendidos
-            // 
-            this.btnMasVendidos.Location = new System.Drawing.Point(205, 133);
-            this.btnMasVendidos.Name = "btnMasVendidos";
-            this.btnMasVendidos.Size = new System.Drawing.Size(131, 37);
-            this.btnMasVendidos.TabIndex = 5;
-            this.btnMasVendidos.Text = "Mas vendido";
-            this.btnMasVendidos.UseVisualStyleBackColor = true;
-            this.btnMasVendidos.Click += new System.EventHandler(this.btnMasVendidos_Click);
-            // 
-            // btnVentasPorFecha
-            // 
-            this.btnVentasPorFecha.Location = new System.Drawing.Point(407, 133);
-            this.btnVentasPorFecha.Name = "btnVentasPorFecha";
-            this.btnVentasPorFecha.Size = new System.Drawing.Size(131, 37);
-            this.btnVentasPorFecha.TabIndex = 6;
-            this.btnVentasPorFecha.Text = "Venta por fecha";
-            this.btnVentasPorFecha.UseVisualStyleBackColor = true;
-            this.btnVentasPorFecha.Click += new System.EventHandler(this.btnVentasPorFecha_Click);
-            // 
-            // btnGanancias
-            // 
-            this.btnGanancias.Location = new System.Drawing.Point(605, 133);
-            this.btnGanancias.Name = "btnGanancias";
-            this.btnGanancias.Size = new System.Drawing.Size(148, 37);
-            this.btnGanancias.TabIndex = 7;
-            this.btnGanancias.Text = "Ganancias por fecha";
-            this.btnGanancias.UseVisualStyleBackColor = true;
-            this.btnGanancias.Click += new System.EventHandler(this.btnGanancias_Click);
+            this.lblTotalReporte.AutoSize = true;
+            this.lblTotalReporte.Location = new System.Drawing.Point(345, 367);
+            this.lblTotalReporte.Name = "lblTotalReporte";
+            this.lblTotalReporte.Size = new System.Drawing.Size(101, 16);
+            this.lblTotalReporte.TabIndex = 9;
+            this.lblTotalReporte.Text = "lblTotalReporte";
             // 
             // dgvReportes
             // 
@@ -741,20 +678,83 @@
             this.dgvReportes.Size = new System.Drawing.Size(728, 150);
             this.dgvReportes.TabIndex = 8;
             // 
-            // lblTotalReporte
+            // btnGanancias
             // 
-            this.lblTotalReporte.AutoSize = true;
-            this.lblTotalReporte.Location = new System.Drawing.Point(345, 367);
-            this.lblTotalReporte.Name = "lblTotalReporte";
-            this.lblTotalReporte.Size = new System.Drawing.Size(101, 16);
-            this.lblTotalReporte.TabIndex = 9;
-            this.lblTotalReporte.Text = "lblTotalReporte";
+            this.btnGanancias.Location = new System.Drawing.Point(595, 127);
+            this.btnGanancias.Name = "btnGanancias";
+            this.btnGanancias.Size = new System.Drawing.Size(158, 48);
+            this.btnGanancias.TabIndex = 7;
+            this.btnGanancias.Text = "Ganancias por fecha";
+            this.btnGanancias.UseVisualStyleBackColor = true;
+            this.btnGanancias.Click += new System.EventHandler(this.btnGanancias_Click);
+            // 
+            // btnVentasPorFecha
+            // 
+            this.btnVentasPorFecha.Location = new System.Drawing.Point(407, 133);
+            this.btnVentasPorFecha.Name = "btnVentasPorFecha";
+            this.btnVentasPorFecha.Size = new System.Drawing.Size(131, 37);
+            this.btnVentasPorFecha.TabIndex = 6;
+            this.btnVentasPorFecha.Text = "Venta por fecha";
+            this.btnVentasPorFecha.UseVisualStyleBackColor = true;
+            this.btnVentasPorFecha.Click += new System.EventHandler(this.btnVentasPorFecha_Click);
+            // 
+            // btnMasVendidos
+            // 
+            this.btnMasVendidos.Location = new System.Drawing.Point(205, 133);
+            this.btnMasVendidos.Name = "btnMasVendidos";
+            this.btnMasVendidos.Size = new System.Drawing.Size(131, 37);
+            this.btnMasVendidos.TabIndex = 5;
+            this.btnMasVendidos.Text = "Mas vendido";
+            this.btnMasVendidos.UseVisualStyleBackColor = true;
+            this.btnMasVendidos.Click += new System.EventHandler(this.btnMasVendidos_Click);
+            // 
+            // btnPendientes
+            // 
+            this.btnPendientes.Location = new System.Drawing.Point(25, 133);
+            this.btnPendientes.Name = "btnPendientes";
+            this.btnPendientes.Size = new System.Drawing.Size(148, 37);
+            this.btnPendientes.TabIndex = 4;
+            this.btnPendientes.Text = "Pendientes entregar";
+            this.btnPendientes.UseVisualStyleBackColor = true;
+            this.btnPendientes.Click += new System.EventHandler(this.btnPendientes_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(333, 79);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 16);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Hasta";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(333, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(48, 16);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Desde";
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Location = new System.Drawing.Point(70, 74);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(200, 22);
+            this.dtpHasta.TabIndex = 1;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Location = new System.Drawing.Point(70, 20);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(200, 22);
+            this.dtpDesde.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(793, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
