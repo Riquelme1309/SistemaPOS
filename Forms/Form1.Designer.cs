@@ -514,6 +514,7 @@
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.RowHeadersWidth = 51;
             this.dgvVentas.RowTemplate.Height = 24;
+            this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(773, 342);
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
